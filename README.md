@@ -61,8 +61,8 @@ delegator and delegate don't match, or if you forget to include the annotation w
 ![](docs/compile_error.png)
 
 
-Requirements
-============
+Required Scala version
+======================
 
 * Scala 2.10+
 
