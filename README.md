@@ -14,9 +14,13 @@ The code will be on Maven central soon...
 Examples
 ========
 ![](docs/delegate1.png)
+
 ![](docs/delegate2.png)
+
 ![](docs/delegate3.png)
+
 ![](docs/delegate4.png)
+
 ![](docs/compile_error.png)
 
 
