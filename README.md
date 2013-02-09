@@ -12,7 +12,23 @@ So to keep it in one sentence: This macro allows you to easily (without the boil
 
 Usage
 =====
-The code will be on Maven central soon...
+The project is synced with Sonatype OSS as well as Maven Central.
+
+Dependency in *SBT* format:
+
+```scala
+libraryDependencies += "pl.project13.scala" %% "macro-method-alias" % "1.0"
+```
+
+Dependency in *Maven* format:
+
+```xml
+<dependency>
+  <groupId>pl.project13.scala</groupId>
+  <artifactId>macro-method-alias_2.10</artifactId>
+  <version>1.0</version>
+</dependency>
+```
 
 Examples
 ========
