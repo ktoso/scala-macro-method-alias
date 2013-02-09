@@ -7,6 +7,10 @@ to maintain 2 APIs at the same time - an example would be `tell` and `!` (where 
 √ictor jokingly said that a `@delegate` annotation would be fun, I came back to this idea while me and my friend were
 waiting for our plane back home to Poland. Turns out it's doable and doesn't even look all too bad - see for yourself.
 
+Usage
+=====
+The code will be on Maven central soon...
+
 Examples
 ========
 ![](docs/delegate1.png)
