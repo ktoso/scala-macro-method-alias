@@ -16,12 +16,14 @@ Examples
 def ! = aliasFor { }
 ------------
 There are two ways to delegate using macro-delegate. One of them is the `aliasFor` method:
+
 ```scala
 // delegation code will be generated automatically
 
 def tell(name: String) = ???
 
-def !(name: String) = aliasFor { tell _ }```
+def !(name: String) = aliasFor { tell _ }
+```
 
 ![](docs/delegate1.png)
 
