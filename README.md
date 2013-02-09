@@ -2,9 +2,13 @@ scala-macro-delegate
 ====================
 scala-macro-delegate makes it possible to delegate to other methods without actually writing the delegation code.
 
+Background
+----------
 The idea came up during a Scala User Group meetup after JFokus where we were discussing how Akka has
 to maintain 2 APIs at the same time - an example would be `tell` and `!` (where `tell` is referred to as "Java API").
 √ictor jokingly said that a `@delegate` annotation would be fun, I came back to this idea while me and my friend were waiting for our plane back home to Poland. Turns out it's doable and doesn't even look all too bad - see for yourself.
+
+So to keep it in one sentence: This macro allows you to easily (without the boilerplate of passing around the input arguments) delegate from one method to another. Imagine you're supporting multiple API which do the same thing, or you've deprecated one of the methods and now keep routing it to the new implementation.
 
 Usage
 =====
@@ -12,6 +16,13 @@ The code will be on Maven central soon...
 
 Examples
 ========
+
+First, import the macro:
+
+```scala
+import pl.project13.scala.macros.Alias._
+```
+
 
 def ! = aliasFor { }
 ------------
@@ -28,6 +39,8 @@ def !(name: String) = aliasFor { tell _ }
 ![](docs/delegate1.png)
 
 ![](docs/delegate2.png)
+
+Delegation of up to 22 params is supported. If you have more parameters in a method I'd suggest refactoring it anyway ;-)
 
 @aliasFor(it _) def ! = delegated[ReturnType]
 --------------------------------------
