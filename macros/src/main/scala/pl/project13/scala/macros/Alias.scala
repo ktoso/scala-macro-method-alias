@@ -5,6 +5,22 @@ import language.experimental.macros
 import reflect.macros._
 import annotation.StaticAnnotation
 
+/**
+ * The aliasFor macro allows you to delegate all params from a method to another one. An example would be:
+ *
+ * {{{
+ *   def manyParams(a: String, b: Int): String = {
+ *     a + b
+ *   }
+ *
+ *   def !!(a: String, b: Int) = aliasFor { manyParams _ }
+ * }}}
+ *
+ * The return type of ''!!'' is inferred just like you'd expect, and all params (''a'' and ''b'') will be passed into manyParams.
+ *
+ * There is another syntax you might want to try, though the above one is the recommended way.
+ * To see docs about the annotation style of delegating see [[pl.project13.scala.macros.Alias#aliasFor]] (the class)
+ */
 object Alias {
 
   /**
@@ -105,7 +121,7 @@ object Alias {
   }
 
 
-  def extractDelegatorParams(c: Context) =
+  private def extractDelegatorParams(c: Context) =
     c.enclosingMethod.children
       .filterNot(p => p.isTerm && p.symbol.isParameter)
       .map(a => Option(a.symbol))
@@ -113,13 +129,13 @@ object Alias {
       .flatMap(a => a.map(_.name.toString))
       .filterNot(_ == "<none>")
 
-  def extractDelegatorMethodName(c: Context) =
+  private def extractDelegatorMethodName(c: Context) =
     c.enclosingMethod.symbol.name
 
-  def extractDelegateMethodName(c: Context) =
+  private def extractDelegateMethodName(c: Context) =
     extractDelegateMethodName1(c)(c.enclosingMethod.children)
 
-  def extractDelegateMethodName1(c: Context)(children: List[c.universe.Tree]) =
+  private def extractDelegateMethodName1(c: Context)(children: List[c.universe.Tree]) =
     children
       .map(a => a.children)
       .flatten
@@ -132,7 +148,7 @@ object Alias {
   /**
    * Aborts execution if unable to find ''aliasFor'' annotation, returns it otherwise.
    */
-  def extractAliasForAnnotation[A <: StaticAnnotation](annotation: Class[A], c: Context): c.universe.Annotation = {
+  private def extractAliasForAnnotation[A <: StaticAnnotation](annotation: Class[A], c: Context): c.universe.Annotation = {
     val rawAnnotations = c.enclosingMethod.symbol.annotations
     val annotationTypes = rawAnnotations.map(_.tpe.toString)
     p(s"The method [${c.enclosingMethod.symbol}] has these annotations: $annotationTypes")

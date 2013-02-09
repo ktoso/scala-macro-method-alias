@@ -6,12 +6,7 @@ object BuildSettings {
     organization  := "pl.project13.scala",
     name          := "macro-method-alias",
     version       := "1.0",
-    scalaVersion  := "2.10.0",
-    scalacOptions += "",
-    licenses      := ("Apache2", new java.net.URL("http://www.apache.org/licenses/LICENSE-2.0.txt")) :: Nil,
-    publishMavenStyle := true,
-    // For some reason generating the docs generates a publish error
-    publishArtifact in (Compile, packageDoc) := false
+    scalaVersion  := "2.10.0"
   )
 }
 
