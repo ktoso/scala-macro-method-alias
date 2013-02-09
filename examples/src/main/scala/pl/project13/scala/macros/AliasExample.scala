@@ -22,7 +22,7 @@ class AliasExample {
     a + b
   }
 
-  def !!(a:String, b:Int): String = aliasFor { manyParams _ }
+  def !!(a: String, b: Int) = aliasFor { manyParams _ }
 
 
   // delegating using the aliasFor annotation

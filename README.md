@@ -24,8 +24,8 @@ import pl.project13.scala.macros.Alias._
 ```
 
 
-def ! = aliasFor { }
-------------
+Suggested style: aliasFor method
+--------------------------------
 There are two ways to delegate using macro-delegate. One of them is the `aliasFor` method:
 
 ```scala
@@ -42,8 +42,12 @@ def !(name: String) = aliasFor { tell _ }
 
 Delegation of up to 22 params is supported. If you have more parameters in a method I'd suggest refactoring it anyway ;-)
 
-@aliasFor(it _) def ! = delegated[ReturnType]
---------------------------------------
+Annotation style: @aliasFor + delegated[ReturnType]
+---------------------------------------------------
+The other style allows you to define the delegate as annotation - which makes it more visible and also documentable that this method will only
+delegate calls to the other implementation.
+
+It has the downside that the implementation of this method has to explicitly type the return type, as in: `delegated[Int]`.
 
 ![](docs/delegate3.png)
 
@@ -60,11 +64,11 @@ delegator and delegate don't match, or if you forget to include the annotation w
 Requirements
 ============
 
-* Scala 2.10
+* Scala 2.10+
 
 Shameless plug
 ==============
-I'm one of the leads of the Kraków Scala User Group (as well as JUG) - check out our meetups! http://krakowscala.pl
+I'm one of the leads of the Kraków Scala User Group (as well as JUG) - check out our meetups! http://krakowscala.pl && http://meetup.java.pl
 
 License
 =======
