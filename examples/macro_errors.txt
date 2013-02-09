@@ -1,0 +1,16 @@
+[error] macro must return a compiler-specific expr; returned value is null
+[error] one error found
+[error] (examples/compile:compile) Compilation failed
+
+
+delegate: List(((x$1: String) => AliasExample.this.tell(x$1)), "")
+[error] /Users/ktoso/code/scala-alias-macro/examples/src/main/scala/com/softwaremill/debug/AliasExample.scala:14: alias macro should only be used on single method delegation
+[error]   def !(name: String) = alias { tell(_); "" }
+
+
+[error] /Users/ktoso/code/scala-alias-macro/examples/src/main/scala/pl/project13/scala/macros/AliasExample.scala:30:
+        When using aliasFor/delegate style delegation you must annotate the method with [pl.project13.scala.macros.Alias.aliasFor[T]].
+[error]   def ?(name: String) = delegated[Int]
+[error]                                  ^
+[error] one error found
+[error] (examples/compile:compile) Compilation failed
