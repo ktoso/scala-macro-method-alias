@@ -10,6 +10,10 @@ waiting for our plane back home to Poland. Turns out it's doable and doesn't eve
 Examples
 ========
 ![](docs/delegate1.png)
+![](docs/delegate2.png)
+![](docs/delegate3.png)
+![](docs/delegate4.png)
+![](docs/compile_error.png)
 
 
 Requirements
@@ -17,6 +21,10 @@ Requirements
 
 * Scala 2.10
 
+Shameless plug
+==============
+I'm one of the leads of the Kraków Scala User Group, check out our meetups! http://krakowscala.pl
+(and of the JUG and a few others too...)
 
 License
 =======
