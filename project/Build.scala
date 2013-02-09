@@ -4,8 +4,8 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq (
     organization  := "pl.project13.scala",
-    name          := "macro-delegate",
-    version       := "0.0.1-SNAPSHOT",
+    name          := "macro-method-alias",
+    version       := "1.0",
     scalaVersion  := "2.10.0",
     scalacOptions += "",
     licenses      := ("Apache2", new java.net.URL("http://www.apache.org/licenses/LICENSE-2.0.txt")) :: Nil,
@@ -64,13 +64,13 @@ object ScalaMacroDebugBuild extends Build with SonatypeSettings {
   lazy val root: Project = Project(
     "root",
     file("."),
-    settings = buildSettings ++ sonatypeSettings
+    settings = buildSettings
   ) aggregate(macros, examples)
 
   lazy val macros: Project = Project(
     "macros",
     file("macros"),
-    settings = buildSettings ++ Seq(
+    settings = buildSettings ++ sonatypeSettings ++ Seq(
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-compiler" % _),
       libraryDependencies += scalaTest
     )
