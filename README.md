@@ -10,6 +10,10 @@ to maintain 2 APIs at the same time - an example would be `tell` and `!` (where 
 
 So to keep it in one sentence: This macro allows you to easily (without the boilerplate of passing around the input arguments) delegate from one method to another. Imagine you're supporting multiple API which do the same thing, or you've deprecated one of the methods and now keep routing it to the new implementation.
 
+Disclaimer
+==========
+Macros are not the best solution when slapped around everywhere - in this case, I believe the win we get from it is pretty low, so I wouldn't advertise using this macro oeverywhere just because it's cool ;-)
+
 Usage
 =====
 The project is synced with Sonatype OSS as well as Maven Central.
