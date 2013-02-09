@@ -9,7 +9,7 @@ waiting for our plane back home to Poland. Turns out it's doable and doesn't eve
 
 Examples
 ========
-
+![](docs/delegate1.png)
 
 
 Requirements
