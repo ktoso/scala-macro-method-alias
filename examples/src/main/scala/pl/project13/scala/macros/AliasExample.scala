@@ -13,7 +13,7 @@ class AliasExample {
     tellCalled += 1
   }
 
-  def !(name: String) = alias { tell _ }
+  def !(name: String) = aliasFor { tell _ }
 
 
   // delegating with many parameters - you don't have to delegate manualy :-)
@@ -22,7 +22,7 @@ class AliasExample {
     a + b
   }
 
-  def !!(a:String, b:Int): String = alias { manyParams _ }
+  def !!(a:String, b:Int): String = aliasFor { manyParams _ }
 
 
   // delegating using the aliasFor annotation

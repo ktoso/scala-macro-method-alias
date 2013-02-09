@@ -29,9 +29,29 @@ object Alias {
    */
   final class aliasFor[T](delegate: => T) extends StaticAnnotation
 
-  def alias[In, T](delegate: In => T) = macro alias_impl[T]
-  def alias[In1, In2, T](delegate: (In1, In2) => T): T = macro alias_impl[T]
   def delegated[T]: T = macro delegated_impl[T]
+  def aliasFor[P1, T](delegate: (P1) => T) = macro alias_impl[T]
+  def aliasFor[P1, P2, T](delegate: (P1, P2) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, T](delegate: (P1, P2, P3) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, T](delegate: (P1, P2, P3, P4) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, T](delegate: (P1, P2, P3, P4, P5) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, T](delegate: (P1, P2, P3, P4, P5, P6) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, T](delegate: (P1, P2, P3, P4, P5, P6, P7) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21) => T): T = macro alias_impl[T]
+  def aliasFor[P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, T](delegate: (P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22) => T): T = macro alias_impl[T]
 
   def delegated_impl[T](c: Context): c.Expr[T] = {
     import c._
@@ -43,7 +63,7 @@ object Alias {
     val delegatorMethodName = extractDelegatorMethodName(c)
     val methodName = extractDelegateMethodName1(c)(annotation.scalaArgs.head.children) // we take out the code from inside the annotation, find the method name
 
-    require(delegatorMethodName != methodName, s"You should not delegate to the same method (name)! Tried to delegate [$methodName]")
+    require(delegatorMethodName != methodName.symbol.name, s"You should not delegate to the same method (name)! Tried to delegate [$methodName]")
 
     val params = inParams.mkString(", ")
 
@@ -105,7 +125,7 @@ object Alias {
       .flatten
       .filter(_.isTerm)
       .filterNot(_.isEmpty)
-      .filterNot(_.toString == "alias") // exclude the macro name
+      .filterNot(_.toString == "aliasFor") // exclude the macro name
       .head // first tree inside our macro
       .children.head // the thing inside is partially applied - it should
 
