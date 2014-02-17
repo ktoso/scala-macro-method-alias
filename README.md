@@ -92,12 +92,6 @@ Required Scala version
 
 * Scala 2.10+
 
-Shameless plug
-==============
-I'm one of the leads of the Kraków Scala User Group (as well as JUG) - check out our meetups!
-
-http://krakowscala.pl && http://meetup.java.pl
-
 License
 =======
-I hereby release this under the **Apache 2 License**.
+**Apache 2 License**
