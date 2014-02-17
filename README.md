@@ -2,6 +2,8 @@ scala macro method alias
 ========================
 *scala macro method alias* makes it possible to delegate to other methods without actually writing the delegation code.
 
+<a href="https://travis-ci.org/ktoso/scala-macro-method-alias"><img src="https://travis-ci.org/ktoso/scala-macro-method-alias.png"/></a>
+
 Background
 ----------
 The idea came up during a Scala User Group meetup after JFokus (Stockholm) where we were discussing how Akka has
